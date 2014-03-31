@@ -1,4 +1,5 @@
 from tkinter import *
+from random import randrange
 
 class Ship():
     '''
@@ -11,7 +12,7 @@ class Ship():
     свойство:координаты точек вокруг корабля
     свойство:статус гибели корабля
     метод-конструктор:изменение массива со статусами точек, например [0,0,1,0]
-    метод:выстрел(координаты точки), возвращает 1 - если попали, 2 - убил, 0 - мимо
+    метод:shoot(координаты точки), возвращает 1 - если попали, 2 - убил, 0 - мимо
     '''
     
     #свойства объектов, описанные в классе
@@ -59,14 +60,36 @@ class Ship():
             status = 2
             self.death = 1
         return status
-            
 
-obj = Ship(2,1,"0_1")
-print(obj.coord_map)
-print(obj.status_map)
-print(obj.around_map)
-print(obj.shoot("0_1"))
-print(obj.shoot("0_2"))
+class Application(Frame):
+    def say_hi(self):
+        print("hi there, everyone!")
 
-flot = []
-flot.append(obj)
+    def createWidgets(self):
+        self.QUIT = Button(self)
+        self.QUIT["text"] = "QUIT"
+        self.QUIT["fg"]   = "red"
+        self.QUIT["command"] =  self.quit
+
+        self.QUIT.pack({"side": "left"})
+
+        self.hi_there = Button(self)
+        self.hi_there["text"] = "Hello",
+        self.hi_there["command"] = self.say_hi
+
+        self.hi_there.pack({"side": "left"})
+
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.pack()
+        self.createWidgets()
+
+
+#инициализация окна
+root = Tk()
+root.title = "Морской бой"
+root.geometry("800x500+100+100")
+
+app = Application(master=root)
+app.mainloop()
+root.destroy()
