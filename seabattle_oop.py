@@ -1,5 +1,4 @@
 from Application import *
-from Ship import *
 
 #инициализация окна
 root = Tk()

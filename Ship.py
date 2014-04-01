@@ -10,6 +10,7 @@ class Ship():
     свойство:массив с координатами точек корабля, который формируется конструктором
     свойство:координаты точек вокруг корабля
     свойство:статус гибели корабля
+    свойство (указывается при создании объекта):префикс тега (для своих кораблей будет, например, "my", для чужих "nmy"
     метод-конструктор:изменение массива со статусами точек, например [0,0,1,0]
     метод:shoot(координаты точки), возвращает 1 - если попали, 2 - убил, 0 - мимо
     '''
@@ -23,28 +24,32 @@ class Ship():
     around_map = []
     #статус гибели корабля
     death = 0
+    #префикс тега
+    prefix = ""
 
     #метод-конструктор
-    def __init__(self,length,rasp,keypoint):
+    def __init__(self,length,rasp,keypoint,ship_prefix):
+        #переопределить переменную self.prefix
+        self.prefix = ship_prefix
         #создать массивы status_map и coord_map (в зависимости от направления)
-        stolb = int(keypoint[0])
-        stroka = int(keypoint[2])
+        stroka = int(keypoint.split("_")[1])
+        stolb = int(keypoint.split("_")[2])
         for i in range(length):
             self.status_map.append(0)
             #в зависимости от направления генерировать новые точки корабля
             #0 - горизонт (увеличивать столбец), 1 - вертикаль (увеличивать строку)
             if rasp == 0:
-                self.coord_map.append(str(stolb+i)+"_"+str(stroka))
+                self.coord_map.append(self.prefix+"_"+str(stroka)+"_"+str(stolb+i))
             else:
-                self.coord_map.append(str(stolb)+"_"+str(stroka+i))
+                self.coord_map.append(self.prefix+"_"+str(stroka+i)+"_"+str(stolb))
         for point in self.coord_map:
             ti = int(point[0])
             tj = int(point[2])
             for ri in range(ti-1,ti+2):
                 for rj in range(tj-1,tj+2):
                     if ri>=0 and ri<=9 and rj>=0 and rj<=9:
-                        if not(str(ri)+"_"+str(rj) in self.around_map) and not(str(ri)+"_"+str(rj) in self.coord_map):
-                            self.around_map.append(str(ri)+"_"+str(rj))
+                        if not(self.prefix+"_"+str(ri)+"_"+str(rj) in self.around_map) and not(self.prefix+"_"+str(ri)+"_"+str(rj) in self.coord_map):
+                            self.around_map.append(self.prefix+"_"+str(ri)+"_"+str(rj))
 
     #выстрел
     def shoot(self,shootpoint):
