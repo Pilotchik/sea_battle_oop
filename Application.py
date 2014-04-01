@@ -4,6 +4,7 @@ from random import randrange
 from time import time
 from tkinter import *
 from Ship import *
+from tkinter.messagebox import *
 
 class Application(Frame):
     '''
@@ -28,7 +29,11 @@ class Application(Frame):
     #время генерации флота
     fleet_time = 0
     #компьютерный флот
-    fleet = []
+    fleet_comp = []
+    #наш флот
+    fleet_user = []
+    #массив точек, в которые стрелял компьютер
+    comp_shoot = []
 
     #добавление холста на окно
     def createCanvas(self):
@@ -138,8 +143,9 @@ class Application(Frame):
         print(time() - self.fleet_time,"секунд")
         #отрисовка кораблей
         if prefix == "nmy":
-            self.fleet = fleet_ships
+            self.fleet_comp = fleet_ships
         else:
+            self.fleet_user = fleet_ships
             self.paintShips(fleet_ships)
 
     #метод для отрисовки кораблей
@@ -162,12 +168,71 @@ class Application(Frame):
         #найти координаты
         new_str = int(point.split("_")[1])
         new_stlb = int(point.split("_")[2])
-        xn = new_stlb*self.gauge + (new_stlb+1)*self.indent + self.offset_x_comp
+        if point.split("_")[0] == "nmy":
+            xn = new_stlb*self.gauge + (new_stlb+1)*self.indent + self.offset_x_comp
+        else:
+            xn = new_stlb*self.gauge + (new_stlb+1)*self.indent + self.offset_x_user
         yn = new_str*self.gauge + (new_str+1)*self.indent + self.offset_y
         #добавить прямоугольник
         #покрасить в белый
         self.canv.itemconfig(point,fill="white")
-        self.canv.create_oval(xn+13,yn+13,xn+16,yn+16,fill="black")
+        self.canv.create_oval(xn+13,yn+13,xn+17,yn+17,fill="gray")
+
+    #метод проверки финиша
+    def checkFinish(self,type):
+        '''type - указание, от чьего имени идёт обращение'''
+        status = 0
+        if type == "user":
+            for ship in self.fleet_comp:
+                status += ship.death
+        else:
+            for ship in self.fleet_user:
+                status += ship.death
+        return status
+
+    #метод игры компьютера
+    def compPlay(self):
+        #генерировать случайные точки, пока не будет найдена пара, которой не было в списке выстрелов
+        while 1:
+            i = randrange(10)
+            j = randrange(10)
+            if not("my_"+str(i)+"_"+str(j) in self.comp_shoot):
+                break
+        xn = j*self.gauge + (j+1)*self.indent + self.offset_x_user
+        yn = i*self.gauge + (i+1)*self.indent + self.offset_y
+        hit_status = 0
+        for obj in self.fleet_user:
+            #если координаты точки совпадают с координатой корабля, то вызвать метод выстрела
+            if "my_"+str(i)+"_"+str(j) in obj.coord_map:
+                #изменить статус попадания
+                hit_status = 1
+                #мы попали, поэтому надо нарисовать крест
+                self.paintCross(xn,yn,"my_"+str(i)+"_"+str(j))
+                #добавить точку в список выстрелов компьютера
+                self.comp_shoot.append("my_"+str(i)+"_"+str(j))
+                #если метод вернул двойку, значит, корабль убит
+                if obj.shoot("my_"+str(i)+"_"+str(j)) == 2:
+                    #изменить статус корабля
+                    obj.death = 1
+                    #все точки вокруг корабля сделать точками, в которые мы уже стреляли
+                    for point in obj.around_map:
+                        #нарисовать промахи
+                        self.paintMiss(point)
+                        #добавить точки вокруг корабля в список выстрелов компьютера
+                        self.comp_shoot.append(point)
+                break
+        #если статус попадания остался равным нулю - значит, мы промахнулись, передать управление компьютеру
+        #иначе дать пользователю стрелять
+        if hit_status == 0:
+            #добавить точку в список выстрелов
+            self.comp_shoot.append("my_"+str(i)+"_"+str(j))
+            self.paintMiss("my_"+str(i)+"_"+str(j))
+        else:
+            #проверить выигрыш, если его нет - передать управление компьютеру
+            if self.checkFinish("comp") < 10:
+                self.compPlay()
+            else:
+                showinfo("Морской бой", "Вы проиграли!")
 
     #метод для игры пользователя
     def userPlay(self,e):
@@ -180,7 +245,7 @@ class Application(Frame):
                 if e.x >= xn and e.x <= xk and e.y >= yn and e.y <= yk:
                     #проверить попали ли мы в корабль
                     hit_status = 0
-                    for obj in self.fleet:
+                    for obj in self.fleet_comp:
                         #если координаты точки совпадают с координатой корабля, то вызвать метод выстрела
                         if "nmy_"+str(i)+"_"+str(j) in obj.coord_map:
                             #изменить статус попадания
@@ -196,9 +261,15 @@ class Application(Frame):
                                     #нарисовать промахи
                                     self.paintMiss(point)
                             break
-                    #если статус попадания остался равным нулю - значит, мы промахнулись
+                    #если статус попадания остался равным нулю - значит, мы промахнулись, передать управление компьютеру
+                    #иначе дать пользователю стрелять
                     if hit_status == 0:
                         self.paintMiss("nmy_"+str(i)+"_"+str(j))
+                        #проверить выигрыш, если его нет - передать управление компьютеру
+                        if self.checkFinish("user") < 10:
+                            self.compPlay()
+                        else:
+                            showinfo("Морской бой", "Вы выиграли!")
                     break
 
     def __init__(self, master=None):
