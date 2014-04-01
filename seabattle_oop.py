@@ -62,27 +62,25 @@ class Ship():
         return status
 
 class Application(Frame):
-    def say_hi(self):
-        print("hi there, everyone!")
+    '''
+    Приложение. Наследует класс Frame. Создание окна, холста и всех функций для реализации приложения
+    '''
+    width = 800
+    height = 400
+    bg = "white"
 
-    def createWidgets(self):
-        self.QUIT = Button(self)
-        self.QUIT["text"] = "QUIT"
-        self.QUIT["fg"]   = "red"
-        self.QUIT["command"] =  self.quit
-
-        self.QUIT.pack({"side": "left"})
-
-        self.hi_there = Button(self)
-        self.hi_there["text"] = "Hello",
-        self.hi_there["command"] = self.say_hi
-
-        self.hi_there.pack({"side": "left"})
+    #добавление холста на окно
+    def createCanvas(self):
+        self.canv = Canvas(self)
+        self.canv["height"] = self.height
+        self.canv["width"] = self.width
+        self.canv["bg"] = self.bg
+        self.canv.pack()
 
     def __init__(self, master=None):
         Frame.__init__(self, master)
         self.pack()
-        self.createWidgets()
+        self.createCanvas()
 
 
 #инициализация окна
@@ -92,4 +90,3 @@ root.geometry("800x500+100+100")
 
 app = Application(master=root)
 app.mainloop()
-root.destroy()

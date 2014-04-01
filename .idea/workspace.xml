@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="07c69807-8326-432c-832f-0fc81f4b3a6d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seabattle_oop.py" afterPath="$PROJECT_DIR$/seabattle_oop.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sea_battle_oop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +29,7 @@
       <file leaf-file-name="seabattle_oop.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="20" selection-start="3215" selection-end="3215" vertical-scroll-proportion="0.6759411" vertical-offset="1545" max-vertical-offset="2222">
+            <state line="77" column="24" selection-start="2991" selection-end="2991" vertical-scroll-proportion="0.8104738" vertical-offset="1369" max-vertical-offset="2156">
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -277,15 +278,15 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -307,6 +308,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="19" selection-start="3131" selection-end="3131" vertical-scroll-proportion="0.0" vertical-offset="1633" max-vertical-offset="2222">
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="12" selection-start="2843" selection-end="2843" vertical-scroll-proportion="0.0" vertical-offset="1413" max-vertical-offset="2178">
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -325,7 +335,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="20" selection-start="3215" selection-end="3215" vertical-scroll-proportion="0.6759411" vertical-offset="1545" max-vertical-offset="2222">
+        <state line="77" column="24" selection-start="2991" selection-end="2991" vertical-scroll-proportion="0.8104738" vertical-offset="1369" max-vertical-offset="2156">
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
