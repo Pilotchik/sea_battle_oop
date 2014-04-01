@@ -27,6 +27,8 @@ class Application(Frame):
     offset_x_comp = 430
     #время генерации флота
     fleet_time = 0
+    #компьютерный флот
+    fleet = []
 
     #добавление холста на окно
     def createCanvas(self):
@@ -36,7 +38,7 @@ class Application(Frame):
         self.canv["bg"] = self.bg
         self.canv.pack()
         #клик по холсту вызывает функцию play
-        self.canv.bind("<Button-1>",self.play)
+        self.canv.bind("<Button-1>",self.userPlay)
 
     def new_game(self):
         self.canv.delete('all')
@@ -52,7 +54,7 @@ class Application(Frame):
                 yk = yn + self.gauge
                 #добавление прямоугольника на холст с тегом в формате:
                 #префикс_строка_столбец
-                self.canv.create_rectangle(xn,yn,xk,yk,tag = "my"+"_"+str(i)+"_"+str(j))
+                self.canv.create_rectangle(xn,yn,xk,yk,tag = "my_"+str(i)+"_"+str(j))
 
         #создание поля для компьютера
         #перебор строк
@@ -65,7 +67,7 @@ class Application(Frame):
                 yk = yn + self.gauge
                 #добавление прямоугольника на холст с тегом в формате:
                 #префикс_строка_столбец
-                self.canv.create_rectangle(xn,yn,xk,yk,tag = "nmy"+"_"+str(i)+"_"+str(j))
+                self.canv.create_rectangle(xn,yn,xk,yk,tag = "nmy_"+str(i)+"_"+str(j),fill="gray")
 
         #добавление букв и цифр
         for i in reversed(range(10)):
@@ -132,20 +134,72 @@ class Application(Frame):
                             fleet_array += new_ship.around_map + new_ship.coord_map
                             fleet_ships.append(new_ship)
                             count_ships += 1
-                            #print("Корабль создан")
                             break
         print(time() - self.fleet_time,"секунд")
         #отрисовка кораблей
-        self.paintShips(fleet_ships,prefix)
+        if prefix == "nmy":
+            self.fleet = fleet_ships
+        else:
+            self.paintShips(fleet_ships)
 
-    def paintShips(self,fleet_ships,prefix):
+    #метод для отрисовки кораблей
+    def paintShips(self,fleet_ships):
         #отрисовка кораблей
         for obj in fleet_ships:
             for point in obj.coord_map:
-                self.canv.itemconfig(point,fill="black")
+                self.canv.itemconfig(point,fill="gray")
 
-    def play(self,e):
-        print("Play",e.x)
+    #метод рисования в ячейке креста на белом фоне
+    def paintCross(self,xn,yn,tag):
+        xk = xn + self.gauge
+        yk = yn + self.gauge
+        self.canv.itemconfig(tag,fill="white")
+        self.canv.create_line(xn+2,yn+2,xk-2,yk-2,width="3")
+        self.canv.create_line(xk-2,yn+2,xn+2,yk-2,width="3")
+
+    #метод рисования промаха
+    def paintMiss(self,point):
+        #найти координаты
+        new_str = int(point.split("_")[1])
+        new_stlb = int(point.split("_")[2])
+        xn = new_stlb*self.gauge + (new_stlb+1)*self.indent + self.offset_x_comp
+        yn = new_str*self.gauge + (new_str+1)*self.indent + self.offset_y
+        #добавить прямоугольник
+        #покрасить в белый
+        self.canv.itemconfig(point,fill="white")
+        self.canv.create_oval(xn+13,yn+13,xn+16,yn+16,fill="black")
+
+    #метод для игры пользователя
+    def userPlay(self,e):
+        for i in range(10):
+            for j in range(10):
+                xn = j*self.gauge + (j+1)*self.indent + self.offset_x_comp
+                yn = i*self.gauge + (i+1)*self.indent + self.offset_y
+                xk = xn + self.gauge
+                yk = yn + self.gauge
+                if e.x >= xn and e.x <= xk and e.y >= yn and e.y <= yk:
+                    #проверить попали ли мы в корабль
+                    hit_status = 0
+                    for obj in self.fleet:
+                        #если координаты точки совпадают с координатой корабля, то вызвать метод выстрела
+                        if "nmy_"+str(i)+"_"+str(j) in obj.coord_map:
+                            #изменить статус попадания
+                            hit_status = 1
+                            #мы попали, поэтому надо нарисовать крест
+                            self.paintCross(xn,yn,"nmy_"+str(i)+"_"+str(j))
+                            #если метод вернул двойку, значит, корабль убит
+                            if obj.shoot("nmy_"+str(i)+"_"+str(j)) == 2:
+                                #изменить статус корабля
+                                obj.death = 1
+                                #все точки вокруг корабля сделать точками, в которые мы уже стреляли
+                                for point in obj.around_map:
+                                    #нарисовать промахи
+                                    self.paintMiss(point)
+                            break
+                    #если статус попадания остался равным нулю - значит, мы промахнулись
+                    if hit_status == 0:
+                        self.paintMiss("nmy_"+str(i)+"_"+str(j))
+                    break
 
     def __init__(self, master=None):
         #инициализация окна
