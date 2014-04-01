@@ -28,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="seabattle_oop.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="seabattle_oop.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="19" selection-start="78" selection-end="78" vertical-scroll-proportion="0.17741935" vertical-offset="0" max-vertical-offset="496">
+            <state line="6" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
               <folding />
             </state>
           </provider>
@@ -40,18 +40,18 @@
       <file leaf-file-name="Ship.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ship.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="66" selection-start="2431" selection-end="2431" vertical-scroll-proportion="0.0" vertical-offset="910" max-vertical-offset="1562">
+            <state line="56" column="12" selection-start="2410" selection-end="2410" vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="1760">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Application.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="70" selection-start="2881" selection-end="2881" vertical-scroll-proportion="0.0" vertical-offset="1438" max-vertical-offset="2420">
+            <state line="140" column="0" selection-start="5736" selection-end="5736" vertical-scroll-proportion="0.6788321" vertical-offset="2801" max-vertical-offset="3586">
               <folding>
-                <element signature="e#26#47#0" expanded="true" />
+                <element signature="e#26#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -352,11 +352,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1420205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18053375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29356357" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -402,7 +402,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="14" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="1518">
           <folding>
-            <element signature="e#26#47#0" expanded="true" />
+            <element signature="e#26#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -428,26 +428,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1571908645/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="634" column="8" selection-start="23412" selection-end="23412" vertical-scroll-proportion="0.33333334" vertical-offset="13787" max-vertical-offset="123684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ship.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="66" selection-start="2431" selection-end="2431" vertical-scroll-proportion="0.0" vertical-offset="910" max-vertical-offset="1562">
+        <state line="56" column="12" selection-start="2410" selection-end="2410" vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="1760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="70" selection-start="2881" selection-end="2881" vertical-scroll-proportion="0.0" vertical-offset="1438" max-vertical-offset="2420">
+        <state line="140" column="0" selection-start="5736" selection-end="5736" vertical-scroll-proportion="0.6788321" vertical-offset="2801" max-vertical-offset="3542">
           <folding>
-            <element signature="e#26#47#0" expanded="true" />
+            <element signature="e#26#54#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="19" selection-start="78" selection-end="78" vertical-scroll-proportion="0.17741935" vertical-offset="0" max-vertical-offset="496">
-          <folding />
         </state>
       </provider>
     </entry>
