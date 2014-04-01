@@ -76,10 +76,26 @@ class Application(Frame):
         self.canv["width"] = self.width
         self.canv["bg"] = self.bg
         self.canv.pack()
+        self.canv.bind("<Button-1>",self.play)
+
+    def new_game(self):
+        print("New_game")
+
+    def play(self,e):
+        print("Play",e.x)
 
     def __init__(self, master=None):
+        #инициализация окна
         Frame.__init__(self, master)
         self.pack()
+
+        #инициализация меню
+        self.m = Menu(master)
+        master.config(menu = self.m)
+        self.m_play = Menu(self.m)
+        self.m.add_cascade(label = "Игра",menu = self.m_play)
+        self.m_play.add_command(label="Новая игра", command = self.new_game)
+
         self.createCanvas()
 
 
@@ -89,4 +105,6 @@ root.title = "Морской бой"
 root.geometry("800x500+100+100")
 
 app = Application(master=root)
+
+
 app.mainloop()
