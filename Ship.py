@@ -16,6 +16,8 @@ class Ship():
     '''
 
     #свойства объектов, описанные в классе
+    #длина
+    length = 1
     #массив со статусами точек корабля
     status_map = []
     #массив с координатами точек корабля
@@ -36,6 +38,7 @@ class Ship():
         self.coord_map = []
         self.death = 0
         self.ship_correct = 1
+        self.length = length
         #переопределить переменную self.prefix
         self.prefix = keypoint.split("_")[0]
         #создать массивы status_map и coord_map (в зависимости от направления)

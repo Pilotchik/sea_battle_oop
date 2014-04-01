@@ -93,6 +93,8 @@ class Application(Frame):
         self.fleet_time = time()
         #генерация кораблей противника
         self.createShips("nmy")
+        #генерация своих кораблей
+        self.createShips("my")
 
     def createShips(self, prefix):
         #функция генерации кораблей на поле
@@ -110,17 +112,16 @@ class Application(Frame):
                 #генерация необходимого количества кораблей необходимой длины
                 for i in range(5-length):
                     #генерация точки со случайными координатами, пока туда не установится корабль
-                    err = 0
+                    try_create_ship = 0
                     while 1:
-                        err += 1
-                        if err > 100:
-                            print(length)
+                        try_create_ship += 1
+                        #если количество попыток превысило 50, начать всё заново
+                        if try_create_ship > 50:
                             break
                         #генерация точки со случайными координатами
                         ship_point = prefix+"_"+str(randrange(10))+"_"+str(randrange(10))
                         #случайное расположение корабля (либо горизонтальное, либо вертикальное)
                         orientation = randrange(2)
-                        #print(ship_point,orientation,length)
                         #создать экземпляр класса Ship
                         new_ship = Ship(length,orientation,ship_point)
                         #если корабль может быть поставлен корректно и его точки не пересекаются с уже занятыми точками поля
@@ -133,12 +134,15 @@ class Application(Frame):
                             count_ships += 1
                             #print("Корабль создан")
                             break
+        print(time() - self.fleet_time,"секунд")
+        #отрисовка кораблей
+        self.paintShips(fleet_ships,prefix)
 
-            print("Кораблей:",count_ships)
-        print("Флот готов",fleet_ships)
-        self.fleet = fleet_ships
-
-
+    def paintShips(self,fleet_ships,prefix):
+        #отрисовка кораблей
+        for obj in fleet_ships:
+            for point in obj.coord_map:
+                self.canv.itemconfig(point,fill="black")
 
     def play(self,e):
         print("Play",e.x)
