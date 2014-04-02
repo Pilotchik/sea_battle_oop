@@ -194,13 +194,31 @@ class Application(Frame):
         return status
 
     #метод игры компьютера
-    def compPlay(self):
-        #генерировать случайные точки, пока не будет найдена пара, которой не было в списке выстрелов
-        while 1:
-            i = randrange(10)
-            j = randrange(10)
-            if not("my_"+str(i)+"_"+str(j) in self.comp_shoot):
-                break
+    #параметр step - шаг, с которым происходит выстрел,
+    # если он 0 - значит выстрел является первым после промаха
+    # если 1 - значит надо стрелять рядом с последним выстрелом
+    def compPlay(self,step = 0):
+        print(step)
+        #если step = 0, то генерировать случайные точки
+        if step == 0:
+            #генерировать случайные точки, пока не будет найдена пара, которой не было в списке выстрелов
+            while 1:
+                i = randrange(10)
+                j = randrange(10)
+                if not("my_"+str(i)+"_"+str(j) in self.comp_shoot):
+                    break
+        else:
+            #взять предпоследнюю точку, выбрать любую точку вокруг (по горизонтали или вертикали)
+            #массив точек вокруг
+            points_around = []
+            i = int(self.comp_shoot[-1].split("_")[1])
+            j = int(self.comp_shoot[-1].split("_")[2])
+            for ti in range(i-1,i+2):
+                for tj in range(j-1,j+2):
+                    if ti>=0 and ti<=9 and tj>=0 and tj<=9 and ti != tj and not(ti == i-1 and tj == j+1) and not(ti == i+1 and tj == j-1) and not("my_"+str(ti)+"_"+str(tj) in self.comp_shoot):
+                        points_around.append([ti,tj])
+            i = points_around[randrange(len(points_around))][0]
+            j = points_around[randrange(len(points_around))][1]
         xn = j*self.gauge + (j+1)*self.indent + self.offset_x_user
         yn = i*self.gauge + (i+1)*self.indent + self.offset_y
         hit_status = 0
@@ -215,6 +233,7 @@ class Application(Frame):
                 self.comp_shoot.append("my_"+str(i)+"_"+str(j))
                 #если метод вернул двойку, значит, корабль убит
                 if obj.shoot("my_"+str(i)+"_"+str(j)) == 2:
+                    hit_status = 2
                     #изменить статус корабля
                     obj.death = 1
                     #все точки вокруг корабля сделать точками, в которые мы уже стреляли
@@ -226,6 +245,7 @@ class Application(Frame):
                 break
         #если статус попадания остался равным нулю - значит, мы промахнулись, передать управление компьютеру
         #иначе дать пользователю стрелять
+        print("hit_status",hit_status)
         if hit_status == 0:
             #добавить точку в список выстрелов
             self.comp_shoot.append("my_"+str(i)+"_"+str(j))
@@ -233,7 +253,14 @@ class Application(Frame):
         else:
             #проверить выигрыш, если его нет - передать управление компьютеру
             if self.checkFinish("comp") < 10:
-                self.compPlay()
+                if hit_status == 1:
+                    step += 1
+                    if step > 4:
+                        self.compPlay()
+                    else:
+                        self.compPlay(step)
+                else:
+                    self.compPlay()
             else:
                 showinfo("Морской бой", "Вы проиграли!")
 
