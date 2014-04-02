@@ -143,7 +143,7 @@ class Application(Frame):
                             fleet_ships.append(new_ship)
                             count_ships += 1
                             break
-        print(time() - self.fleet_time,"секунд")
+        print(prefix,time() - self.fleet_time,"секунд")
         #отрисовка кораблей
         if prefix == "nmy":
             self.fleet_comp = fleet_ships
