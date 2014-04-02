@@ -5,6 +5,7 @@ from time import time
 from tkinter import *
 from Ship import *
 from tkinter.messagebox import *
+import _thread
 
 class Application(Frame):
     '''
@@ -98,8 +99,10 @@ class Application(Frame):
             self.canv.create_text(xc,yc,text=symbols[i])
 
         self.fleet_time = time()
+
         #генерация кораблей противника
-        self.createShips("nmy")
+        _thread.start_new_thread(self.createShips,("nmy",))
+        #self.createShips("nmy")
         #генерация своих кораблей
         self.createShips("my")
 
