@@ -102,7 +102,6 @@ class Application(Frame):
 
         #генерация кораблей противника
         _thread.start_new_thread(self.createShips,("nmy",))
-        #self.createShips("nmy")
         #генерация своих кораблей
         self.createShips("my")
 
