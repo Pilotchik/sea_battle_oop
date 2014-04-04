@@ -215,10 +215,12 @@ class Application(Frame):
             j = int(self.comp_shoot[-1].split("_")[2])
             for ti in range(i-1,i+2):
                 for tj in range(j-1,j+2):
-                    if ti>=0 and ti<=9 and tj>=0 and tj<=9 and ti != tj and not(ti == i-1 and tj == j+1) and not(ti == i+1 and tj == j-1) and not("my_"+str(ti)+"_"+str(tj) in self.comp_shoot):
+                    if ti>=0 and ti<=9 and tj>=0 and tj<=9 and ti != tj and (ti == i or tj == j) and not(ti == i and tj == j) and not("my_"+str(ti)+"_"+str(tj) in self.comp_shoot):
                         points_around.append([ti,tj])
-            i = points_around[randrange(len(points_around))][0]
-            j = points_around[randrange(len(points_around))][1]
+            #cлучайная точка из массива
+            select = randrange(len(points_around))
+            i = points_around[select][0]
+            j = points_around[select][1]
         xn = j*self.gauge + (j+1)*self.indent + self.offset_x_user
         yn = i*self.gauge + (i+1)*self.indent + self.offset_y
         hit_status = 0

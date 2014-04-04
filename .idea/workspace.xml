@@ -29,7 +29,7 @@
       <file leaf-file-name="Application.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="192" selection-start="8897" selection-end="8897" vertical-scroll-proportion="0.37209302" vertical-offset="4598" max-vertical-offset="7084">
+            <state line="222" column="39" selection-start="9111" selection-end="9111" vertical-scroll-proportion="0.81395346" vertical-offset="4499" max-vertical-offset="7128">
               <folding>
                 <element signature="e#26#54#0" expanded="true" />
               </folding>
@@ -326,7 +326,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -336,15 +336,15 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19623233" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19623233" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -364,6 +364,15 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="192" selection-start="8897" selection-end="8897" vertical-scroll-proportion="0.0" vertical-offset="4708" max-vertical-offset="7084">
+          <folding>
+            <element signature="e#26#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="352" />
@@ -371,9 +380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ship.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="13" selection-start="2858" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1826">
-          <folding />
-        </state>
+        <state line="66" column="13" selection-start="2858" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="429" max-vertical-offset="1826" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/seabattle_oop.py">
@@ -383,9 +390,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ship.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="45" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1452">
-          <folding />
-        </state>
+        <state line="45" column="45" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1452" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application.py">
@@ -424,14 +429,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ship.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="13" selection-start="2858" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="1826">
-          <folding />
-        </state>
+        <state line="66" column="13" selection-start="2858" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="1826" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="192" selection-start="8897" selection-end="8897" vertical-scroll-proportion="0.37209302" vertical-offset="4598" max-vertical-offset="7084">
+        <state line="222" column="39" selection-start="9111" selection-end="9111" vertical-scroll-proportion="0.81395346" vertical-offset="4499" max-vertical-offset="7128">
           <folding>
             <element signature="e#26#54#0" expanded="true" />
           </folding>
